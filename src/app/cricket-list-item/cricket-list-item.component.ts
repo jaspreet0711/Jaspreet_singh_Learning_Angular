@@ -7,7 +7,7 @@ import {NgIf} from "@angular/common";
   standalone: true,
   imports: [NgIf],
   templateUrl: './cricket-list-item.component.html',
-  styleUrl: './cricket-list-item.component.css'
+  styleUrl: './cricket-list-item.component.scss'
 })
 export class CricketListItemComponent {
   @Input() player?: Cricket;
