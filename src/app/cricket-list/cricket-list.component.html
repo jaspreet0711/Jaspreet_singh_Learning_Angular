@@ -1,7 +1,15 @@
 <div>
-  <app-cricket-list-item>{{Players[0].playerName}}</app-cricket-list-item>
-  <app-cricket-list-item>{{Players[1].age}}</app-cricket-list-item>
-  <app-cricket-list-item>{{Players[2].team}}</app-cricket-list-item>
-  <app-cricket-list-item>{{Players[3].jerseyNumber}}</app-cricket-list-item>
+  <table>
+    <tbody>
+    <tr *ngFor="let player of Players" >
+
+      <td>{{ player.playerName }}</td>
+      <td>{{ player.age }}</td>
+      <td>{{ player.team }}</td>
+      <td>{{ player.jerseyNumber }}</td>
+      <td>{{ player.isRetired ? 'Yes' : 'No' }}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
 
