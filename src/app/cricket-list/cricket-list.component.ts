@@ -8,7 +8,7 @@ import {CricketListItemComponent} from "../cricket-list-item/cricket-list-item.c
   standalone: true,
   imports: [NgForOf, CricketListItemComponent],
   templateUrl: './cricket-list.component.html',
-  styleUrl: './cricket-list.component.css'
+  styleUrl: './cricket-list.component.scss'
 })
 export class CricketListComponent {
   player1: Cricket = {playerName: "Virat Kohli", age: 35, team: "India", jerseyNumber: 18, isRetired: false};
