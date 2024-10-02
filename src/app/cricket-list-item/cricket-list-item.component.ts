@@ -10,5 +10,5 @@ import {NgIf} from "@angular/common";
   styleUrl: './cricket-list-item.component.scss'
 })
 export class CricketListItemComponent {
-  @Input() player?: Cricket;
+  @Input() player?: Cricket | undefined;
 }
