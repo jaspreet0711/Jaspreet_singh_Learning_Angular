@@ -30,4 +30,10 @@ export class CricketListComponent implements OnInit{
     })
   }
 
+  selectedCricket?: Cricket;
+  player!: Cricket | undefined;
+
+  selectCricket(player: Cricket): void{
+    this.selectedCricket = player;
+  }
 }

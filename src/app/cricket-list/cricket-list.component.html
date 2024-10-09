@@ -1,7 +1,17 @@
 <div>
+  <h2>Best Cricket Players</h2>
   <table>
+    <thead>
+    <tr>
+      <th>Player Name</th>
+      <th>Age</th>
+      <th>Team</th>
+      <th>Jersey Number</th>
+      <th>isRetired</th>
+    </tr>
+    </thead>
     <tbody>
-    <tr *ngFor="let player of Players">
+    <tr *ngFor="let player of Players" (click) = "selectCricket(player)">
 
       <td>{{ player.playerName }}</td>
       <td>{{ player.age }}</td>
@@ -11,5 +21,7 @@
     </tr>
     </tbody>
   </table>
+
+  <app-cricket-list-item [player] = "selectedCricket"></app-cricket-list-item>
 </div>
 
