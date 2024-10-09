@@ -1,13 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {CricketListItemComponent} from "../cricket-list-item/cricket-list-item.component";
 import {CricketPlayerService} from "../services/cricket-player.service";
 import {Cricket} from "../Shared/Models/Cricket";
 
+
 @Component({
   selector: 'app-cricket-list',
   standalone: true,
-  imports: [NgForOf, CricketListItemComponent],
+  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage],
   templateUrl: './cricket-list.component.html',
   styleUrl: './cricket-list.component.scss'
 })
@@ -30,4 +31,11 @@ export class CricketListComponent implements OnInit{
     })
   }
 
+
+selectedCricket?: Cricket;
+player!: Cricket | undefined;
+
+selectCricket(player: Cricket): void{
+  this.selectedCricket = player;
+}
 }

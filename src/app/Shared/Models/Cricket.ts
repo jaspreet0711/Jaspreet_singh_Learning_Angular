@@ -3,6 +3,7 @@ export interface Cricket{
   age : number,
   team : String,
   jerseyNumber: number,
-  isRetired? : boolean
+  isRetired? : boolean,
+  image: String
 
 }

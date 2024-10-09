@@ -12,3 +12,40 @@ h2 {
   color: #333;
   margin-bottom: 20px;
 }
+
+// css styles for main links
+.main-routes {
+  background-color: #333; /* Dark background for the nav bar */
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds some shadow for a subtle effect */
+}
+
+.main-routes nav {
+  display: flex;
+  justify-content: center; /* Center the navigation links */
+  align-items: center;
+}
+
+.main-routes nav a {
+  color: #f2f2f2; /* Light text color for contrast */
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 0 15px; /* Spacing between links */
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions for hover effects */
+}
+
+.main-routes nav a:hover {
+  background-color: #575757; /* Darker background on hover */
+  color: #fff; /* White color on hover */
+}
+
+.main-routes nav a.active {
+  background-color: #007bff; /* Highlight active link */
+  color: #fff; /* White text for active link */
+}
+
+.main-routes nav a.active:hover {
+  background-color: #0056b3; /* Slightly darker shade on hover for active link */
+}
