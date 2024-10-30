@@ -3,6 +3,7 @@
   <table>
     <thead>
     <tr>
+      <th>ID</th>
       <th>Player Name</th>
       <th>Age</th>
       <th>Team</th>
@@ -13,8 +14,9 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let player of Players" (click) = "selectCricket(player)">
+    <tr *ngFor="let player of Players" [routerLink]="['/Players', player.playerName]">
 
+      <td>{{ player.id }}</td>
       <td>{{ player.playerName }}</td>
       <td>{{ player.age }}</td>
       <td>{{ player.team }}</td>
@@ -24,6 +26,6 @@
     </tr>
     </tbody>
   </table>
-  <app-cricket-list-item [player] = "selectedCricket"></app-cricket-list-item>
+  <app-cricket-list-item [Players] = "selectedCricket"></app-cricket-list-item>
 </div>
 

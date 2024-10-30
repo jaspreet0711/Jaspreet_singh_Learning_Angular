@@ -3,19 +3,20 @@ import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {CricketListItemComponent} from "../cricket-list-item/cricket-list-item.component";
 import {CricketPlayerService} from "../services/cricket-player.service";
 import {Cricket} from "../Shared/Models/Cricket";
+import {RouterLink} from "@angular/router";
 
 
 @Component({
   selector: 'app-cricket-list',
   standalone: true,
-  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage],
+  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage, RouterLink],
   templateUrl: './cricket-list.component.html',
   styleUrl: './cricket-list.component.scss'
 })
 export class CricketListComponent implements OnInit{
 
   // placeholder values
-  columns:string[]= ['playerName', 'age', 'team', 'jerseyNumber', 'isRetired'];
+  columns:string[]= ['id', 'playerName', 'age', 'team', 'jerseyNumber', 'isRetired'];
   Players: Cricket[] = [];
 
 
@@ -33,7 +34,6 @@ export class CricketListComponent implements OnInit{
 
 
 selectedCricket?: Cricket;
-player!: Cricket | undefined;
 
 selectCricket(player: Cricket): void{
   this.selectedCricket = player;

@@ -10,8 +10,9 @@ import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.compone
 
 // defining routes of my files here
 const routes: Routes = [
-  {path: 'players', component:CricketListComponent},
-  {path: 'players/:playerName', component: CricketListItemComponent},
+  {path: '', redirectTo: '/Players', pathMatch: 'full'},
+  {path: 'Players', component:CricketListComponent},
+  {path: 'Players/:playerName', component: CricketListItemComponent},
   {path: 'modify-list-item', component: ModifyListItemComponent},
   {path: '**', component: PageNotFoundComponent} // wildcard routes
 ];

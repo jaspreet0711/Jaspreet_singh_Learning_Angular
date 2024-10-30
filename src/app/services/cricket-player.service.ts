@@ -42,10 +42,20 @@ export class CricketPlayerService {
     return of(this.playerList);
   }
 
+  //generate Id method
+  generateNewId(): number{
+    return this.playerList.length > 0 ? Math.max(...this.playerList.map(Players => Players.id)) + 1 : 1;
+  }
+
   // read players method
   getPlayerByName(name: string): Observable<Cricket | undefined>{
     const member = this.playerList.find(player => player.playerName === name);
     return of(member);
+  }
+
+  selectedCricket?: Cricket;
+  selectCricket(player: Cricket): void{
+    this.selectedCricket = player;
   }
 
 }

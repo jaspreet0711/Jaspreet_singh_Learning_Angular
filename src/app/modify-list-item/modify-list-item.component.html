@@ -1,1 +1,45 @@
-<p>modify-list-item works!</p>
+<!-- To use reactive Forms -->
+<form [formGroup]="cricketForm" (ngSubmit)="onSubmit()">
+
+  <!-- Id field -->
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input type="number" id="id" formControlName="id">
+  </div>
+
+  <!-- Name field -->
+  <div class="form-group">
+    <label for="name">Player Name</label>
+    <input type="text" id="name" formControlName="playerName">
+  </div>
+
+  <!-- Age field -->
+  <div class="form-group">
+    <label for="age"> Age</label>
+    <input type="number" id="age" formControlName="age">
+  </div>
+
+  <!-- Team field -->
+  <div class="form-group">
+    <label for="team">Team Name</label>
+    <input type="text" id="team" formControlName="team">
+  </div>
+
+  <!-- Jersey no. field -->
+  <div class="form-group">
+    <label for="jersey">Jersey Number</label>
+    <input type="number" id="jersey" formControlName="jerseyNumber">
+  </div>
+
+  <!-- Jersey no. field -->
+  <div class="form-group">
+    <label for="isRetired">Is Retired</label>
+    <input type="checkbox" id="isRetired" formControlName="isRetired">
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit">Submit</button>
+
+  <!-- Delete Button -->
+  <button type="button" (click)="onDelete()">Delete</button>
+</form>

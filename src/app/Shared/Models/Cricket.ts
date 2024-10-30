@@ -1,4 +1,5 @@
 export interface Cricket{
+  id: number,
   playerName: String,
   age : number,
   team : String,
