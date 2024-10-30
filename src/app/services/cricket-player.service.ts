@@ -37,9 +37,9 @@ export class CricketPlayerService {
   }
 
   // delete method here
-  deletePlayer(name: string): Observable<Cricket[]>{
-    this.playerList = this.playerList.filter(player => player.playerName !== name);
-    return of(this.playerList);
+  deletePlayer(name: string): void{
+    console.log(name)
+    this.playerList = this.playerList.filter(player => player.playerName!== name);
   }
 
   //generate Id method

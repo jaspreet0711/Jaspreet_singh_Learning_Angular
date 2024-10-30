@@ -50,9 +50,11 @@ export class ModifyListItemComponent {
 
 
   onDelete(): void{
-    const name = this.cricketForm.value.playerName;
+    const name = this.cricketForm.get('playerName')?.value;
+
     if (name){
-      this.service.deletePlayer(name).subscribe(() => this.router.navigate(['/Players']));
+      this.service.deletePlayer(name)
+      this.router.navigate(['/Players']);
 
     }
   }
