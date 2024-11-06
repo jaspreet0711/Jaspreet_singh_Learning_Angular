@@ -4,7 +4,7 @@ import {CricketListItemComponent} from "../cricket-list-item/cricket-list-item.c
 import {CricketPlayerService} from "../services/cricket-player.service";
 import {Cricket} from "../Shared/Models/Cricket";
 import {Router, RouterLink} from "@angular/router";
-import {Players} from "../Shared/mock-content";
+
 
 
 @Component({
