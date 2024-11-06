@@ -7,7 +7,7 @@ import {Observable, of} from "rxjs";
   providedIn: 'root'
 })
 export class CricketPlayerService {
-  private playerList: Cricket[] = Players;
+  private playerList: Cricket[] = [];
   constructor() { }
 
   // using my observable method here
@@ -23,12 +23,13 @@ export class CricketPlayerService {
    */
   // add player method
   addPlayer(newPlayer:Cricket) : Observable<Cricket[]>{
-    this.playerList.push(newPlayer)
+    this.playerList.push(newPlayer);
     return of(this.playerList);
+
   }
 
   //update player method
-  updatePlayer(updatedPlayer: Cricket): Observable<Cricket[]>{
+  updatePlayer(id: number, updatedPlayer: Cricket): Observable<Cricket[]> {
     const index = this.playerList.findIndex(player => player.playerName === updatedPlayer.playerName);
     if (index !== -1) {
       this.playerList[index] = updatedPlayer;
@@ -37,9 +38,9 @@ export class CricketPlayerService {
   }
 
   // delete method here
-  deletePlayer(name: string): void{
-    console.log(name)
-    this.playerList = this.playerList.filter(player => player.playerName!== name);
+  deletePlayer(id: number): Observable<Cricket[]>{
+    this.playerList = this.playerList.filter(player => player.id!== id);
+    return of(this.playerList);
   }
 
   //generate Id method

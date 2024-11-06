@@ -39,13 +39,15 @@ export class ModifyListItemComponent {
       const player: Cricket = this.cricketForm.value;
 
       if (player.playerName) {
-        this.service.updatePlayer(player).subscribe(() => this.router.navigate(['/Players']));
+        this.service.updatePlayer(player.id, player)
       } else {
         player.id = this.service.generateNewId();
-        this.service.addPlayer(player).subscribe(() => this.router.navigate(['/Players']));
+        this.service.addPlayer(player)
+      }
+          this.router.navigate(['/Players']);
       }
     }
-  }
+
 
 
 

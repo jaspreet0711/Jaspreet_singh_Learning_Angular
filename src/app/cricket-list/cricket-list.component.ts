@@ -3,7 +3,8 @@ import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {CricketListItemComponent} from "../cricket-list-item/cricket-list-item.component";
 import {CricketPlayerService} from "../services/cricket-player.service";
 import {Cricket} from "../Shared/Models/Cricket";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
+import {Players} from "../Shared/mock-content";
 
 
 @Component({
@@ -20,7 +21,8 @@ export class CricketListComponent implements OnInit{
   Players: Cricket[] = [];
 
 
-  constructor(private playerService: CricketPlayerService) {
+  constructor(private playerService: CricketPlayerService,
+              private rout: Router) {
   } // Dependency injection here
 
 
@@ -37,5 +39,13 @@ selectedCricket?: Cricket;
 
 selectCricket(player: Cricket): void{
   this.selectedCricket = player;
+}
+
+editPlayer(): void{
+  this.rout.navigate(['/modify-list-item']);
+}
+
+onDelete(id:number):void{
+  this.Players = this.Players.filter(Players => Players.id !== id);
 }
 }
