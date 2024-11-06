@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import {Cricket} from "../Shared/Models/Cricket";
 import {Players} from "../Shared/mock-content";
-import {Observable, of} from "rxjs";
+import {catchError, Observable, throwError} from "rxjs";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CricketPlayerService {
-  private playerList: Cricket[] = [];
-  constructor() { }
+  private apiUrl = 'api/playerList';
+  private playerList: Cricket[] = Players;
+  constructor(private http: HttpClient) { }
 
   // using my observable method here
   getPlayerList(): Observable<Cricket[]>{
-    return of(Players);
+    return this.http.get<Cricket[]>(this.apiUrl).pipe(catchError(this.handleError));
   }
 
   // creating my CRUD methods here
@@ -22,25 +24,23 @@ export class CricketPlayerService {
    * @param newPlayer
    */
   // add player method
-  addPlayer(newPlayer:Cricket) : Observable<Cricket[]>{
+  addPlayer(newPlayer:Cricket) : Observable<Cricket>{
+    newPlayer.id = this.generateNewId();
     this.playerList.push(newPlayer);
-    return of(this.playerList);
+    return this.http.post<Cricket>(this.apiUrl, newPlayer).pipe(catchError(this.handleError));
 
   }
 
   //update player method
-  updatePlayer(id: number, updatedPlayer: Cricket): Observable<Cricket[]> {
-    const index = this.playerList.findIndex(player => player.playerName === updatedPlayer.playerName);
-    if (index !== -1) {
-      this.playerList[index] = updatedPlayer;
-    }
-    return of(this.playerList);
+  updatePlayer(updatedPlayer: Cricket): Observable<Cricket | undefined> {
+    const url = `${this.apiUrl}/${updatedPlayer.id}`;
+    return this.http.put<Cricket>(url, updatedPlayer).pipe(catchError(this.handleError));
   }
 
   // delete method here
-  deletePlayer(id: number): Observable<Cricket[]>{
-    this.playerList = this.playerList.filter(player => player.id!== id);
-    return of(this.playerList);
+  deletePlayer(id: number): Observable<{}>{
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.delete(url).pipe(catchError(this.handleError));
   }
 
   //generate Id method
@@ -49,14 +49,19 @@ export class CricketPlayerService {
   }
 
   // read players method
-  getPlayerByName(name: string): Observable<Cricket | undefined>{
-    const member = this.playerList.find(player => player.playerName === name);
-    return of(member);
+  getPlayerByName(name: string): Observable<Cricket>{
+    return this.http.get<Cricket>(`${this.apiUrl}/${name}`).pipe(catchError(this.handleError))
   }
 
   selectedCricket?: Cricket;
   selectCricket(player: Cricket): void{
     this.selectedCricket = player;
+  }
+
+
+  private handleError(error: HttpErrorResponse) {
+    console.error('API error:', error);
+    return throwError(() => new Error('Server error, please try again.'));
   }
 
 }
