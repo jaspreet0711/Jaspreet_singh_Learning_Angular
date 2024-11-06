@@ -9,12 +9,12 @@
       <th>Team</th>
       <th>Jersey Number</th>
       <th>isRetired</th>
-      <th>Images</th>
+      <th>Help</th>
     </tr>
     </thead>
 
     <tbody>
-    <tr *ngFor="let player of Players" [routerLink]="['/Players', player.playerName]">
+    <tr *ngFor="let player of Players" (click)="selectCricket(player)">
 
       <td>{{ player.id }}</td>
       <td>{{ player.playerName }}</td>

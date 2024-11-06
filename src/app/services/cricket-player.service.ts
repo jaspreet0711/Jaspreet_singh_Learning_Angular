@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Cricket} from "../Shared/Models/Cricket";
-import {Players} from "../Shared/mock-content";
 import {catchError, Observable, throwError} from "rxjs";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 
@@ -8,8 +7,8 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
   providedIn: 'root'
 })
 export class CricketPlayerService {
-  private apiUrl = 'api/playerList';
-  private playerList: Cricket[] = Players;
+  private apiUrl = 'api/Players';
+  private playerList: Cricket[] = [];
   constructor(private http: HttpClient) { }
 
   // using my observable method here
@@ -32,7 +31,7 @@ export class CricketPlayerService {
   }
 
   //update player method
-  updatePlayer(updatedPlayer: Cricket): Observable<Cricket | undefined> {
+  updatePlayer(updatedPlayer: Cricket): Observable<Cricket> {
     const url = `${this.apiUrl}/${updatedPlayer.id}`;
     return this.http.put<Cricket>(url, updatedPlayer).pipe(catchError(this.handleError));
   }
@@ -49,14 +48,10 @@ export class CricketPlayerService {
   }
 
   // read players method
-  getPlayerByName(name: string): Observable<Cricket>{
+  getPlayerByName(name: string): Observable<Cricket | undefined>{
     return this.http.get<Cricket>(`${this.apiUrl}/${name}`).pipe(catchError(this.handleError))
   }
 
-  selectedCricket?: Cricket;
-  selectCricket(player: Cricket): void{
-    this.selectedCricket = player;
-  }
 
 
   private handleError(error: HttpErrorResponse) {
