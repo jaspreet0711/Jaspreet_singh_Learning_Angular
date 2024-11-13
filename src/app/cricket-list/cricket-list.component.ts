@@ -1,23 +1,24 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForOf, NgOptimizedImage} from "@angular/common";
+import {JsonPipe, NgForOf, NgOptimizedImage, PercentPipe, UpperCasePipe} from "@angular/common";
 import {CricketListItemComponent} from "../cricket-list-item/cricket-list-item.component";
 import {CricketPlayerService} from "../services/cricket-player.service";
 import {Cricket} from "../Shared/Models/Cricket";
 import {Router, RouterLink} from "@angular/router";
+import {AgeCategoryPipe} from "../age-category.pipe";
 
 
 
 @Component({
   selector: 'app-cricket-list',
   standalone: true,
-  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage, RouterLink],
+  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage, RouterLink, PercentPipe, UpperCasePipe, JsonPipe, AgeCategoryPipe],
   templateUrl: './cricket-list.component.html',
   styleUrl: './cricket-list.component.scss'
 })
 export class CricketListComponent implements OnInit{
 
   // placeholder values
-  columns:string[]= ['id', 'playerName', 'age', 'team', 'jerseyNumber', 'isRetired'];
+  columns:string[]= ['id', 'playerName', 'age', 'team', 'jerseyNumber', 'rating', 'isRetired'];
   Players: Cricket[] = [];
 
 

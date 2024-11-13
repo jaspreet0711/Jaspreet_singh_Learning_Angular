@@ -29,8 +29,8 @@ export class ModifyListItemComponent {
       age: [''],
       team: [''],
       jerseyNumber: [''],
+      rating: [''],
       isRetired: [false]
-
     });
   }
 

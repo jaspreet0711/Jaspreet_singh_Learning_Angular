@@ -15,7 +15,7 @@ import {CricketPlayerService} from "./services/cricket-player.service";
 })
 export class AppComponent implements OnInit{
   title = 'Top 6 players in Cricket';
-  columns:string[]= ['id', 'playerName', 'age', 'team', 'jerseyNumber', 'isRetired'];
+  columns:string[]= ['id', 'playerName', 'age', 'team', 'jerseyNumber', 'rating', 'isRetired'];
   Players: Cricket[] = [];
 
   constructor(private playerService: CricketPlayerService) {

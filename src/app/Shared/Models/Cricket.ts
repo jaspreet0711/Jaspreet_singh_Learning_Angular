@@ -1,10 +1,10 @@
 export interface Cricket{
   id: number,
-  playerName: String,
+  playerName: string,
   age : number,
-  team : String,
+  team : string,
   jerseyNumber: number,
+  rating: number,
   isRetired? : boolean,
-  image: String
-
+  image: string
 }
