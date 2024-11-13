@@ -41,7 +41,7 @@ selectCricket(player: Cricket): void{
   this.selectedCricket = player;
 }
 
-editPlayer(): void{
+editPlayer(id: number): void{
   this.rout.navigate(['/modify-list-item']);
 }
 

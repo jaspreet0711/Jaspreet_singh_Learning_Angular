@@ -38,10 +38,11 @@ export class ModifyListItemComponent {
     if (this.cricketForm.valid){
       const player: Cricket = this.cricketForm.value;
 
-      if (player.playerName) {
-        this.service.updatePlayer(player.id, player)
+      if (player.id) {
+        this.service.updatePlayer(player)
       } else {
-        player.id = this.service.generateNewId();
+        const newId = this.service.generateNewId();
+        player.id = newId
         this.service.addPlayer(player)
       }
           this.router.navigate(['/Players']);
@@ -52,10 +53,10 @@ export class ModifyListItemComponent {
 
 
   onDelete(): void{
-    const name = this.cricketForm.get('playerName')?.value;
+    const id = this.cricketForm.get('id')?.value;
 
-    if (name){
-      this.service.deletePlayer(name)
+    if (id){
+      this.service.deletePlayer(id)
       this.router.navigate(['/Players']);
 
     }
