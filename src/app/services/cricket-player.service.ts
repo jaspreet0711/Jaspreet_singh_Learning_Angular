@@ -23,7 +23,7 @@ export class CricketPlayerService {
    */
   // add player method
   addPlayer(newPlayer:Cricket) : void{
-    this.playerList.push(newPlayer);
+    this.playerList.push(newPlayer)
   }
 
   //update player method
