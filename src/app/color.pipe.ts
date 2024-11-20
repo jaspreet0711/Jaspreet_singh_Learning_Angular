@@ -7,15 +7,15 @@ import {Cricket} from "./Shared/Models/Cricket";
 })
 export class ColorPipe implements PipeTransform {
 
-  transform(jerseyNumber: number): string {
-    if (jerseyNumber >= 10 && jerseyNumber <= 30) {
-      return 'red';
-    } else if (jerseyNumber >= 31 && jerseyNumber <= 40) {
-      return 'blue';
-    } else if (jerseyNumber > 40) {
-      return 'green';
+  transform(num: Cricket): string {
+    if (num.jerseyNumber >= 10 && num.jerseyNumber <= 30) {
+      return `${num.jerseyNumber, 'red'}`;
+    } else if (num.jerseyNumber >= 31 && num.jerseyNumber <= 40) {
+      return `${num.jerseyNumber, 'blue'}`;
+    } else if (num.jerseyNumber > 40) {
+      return `${num.jerseyNumber, 'green'}`;
     } else {
-      return 'black'; // Default color if jersey number doesn't match any range
+      return `${num.jerseyNumber, 'black'}`; // Default color if jersey number doesn't match any range
     }
   }
 }

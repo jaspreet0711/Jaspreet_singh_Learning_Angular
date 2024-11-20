@@ -22,8 +22,9 @@ export class CricketPlayerService {
    * @param newPlayer
    */
   // add player method
-  addPlayer(newPlayer:Cricket) : void{
+  addPlayer(newPlayer:Cricket) : Observable<Cricket[]>{
     this.playerList.push(newPlayer)
+    return of(this.playerList);
   }
 
   //update player method
