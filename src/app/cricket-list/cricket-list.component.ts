@@ -6,13 +6,14 @@ import {Cricket} from "../Shared/Models/Cricket";
 import {Router, RouterLink} from "@angular/router";
 import {AgeCategoryPipe} from "../age-category.pipe";
 import {ColorPipe} from "../color.pipe";
+import {BackgroundColorDirective} from "../directives/background-color.directive";
 
 
 
 @Component({
   selector: 'app-cricket-list',
   standalone: true,
-  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage, RouterLink, PercentPipe, UpperCasePipe, JsonPipe, AgeCategoryPipe, ColorPipe],
+  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage, RouterLink, PercentPipe, UpperCasePipe, JsonPipe, AgeCategoryPipe, ColorPipe, BackgroundColorDirective],
   templateUrl: './cricket-list.component.html',
   styleUrl: './cricket-list.component.scss'
 })

@@ -15,7 +15,7 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let player of Players">
+    <tr *ngFor="let player of Players" [appBackgroundColor]="'lightblue'">
 
       <td>{{ player.id }}</td>
       <td>{{ player.playerName | json}}</td>
@@ -26,8 +26,8 @@
       <td>{{ player.isRetired ? 'True' : 'False' }}</td>
      <!-- <td><img [ngSrc]="player.image" alt="Image" width="100" height="100" priority></td>-->
 
-      <td><button (click)="editPlayer()">Edit</button>
-      <button (click)="onDelete(player.id)">Delete</button></td>
+      <td><button (click)="editPlayer()" [appBackgroundColor]="'lightgreen'">Edit</button>
+      <button (click)="onDelete(player.id)" [appBackgroundColor]="'red'">Delete</button></td>
     </tr>
     </tbody>
   </table>
