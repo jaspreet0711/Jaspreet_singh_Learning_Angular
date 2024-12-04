@@ -2,6 +2,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import {provideRouter, Routes} from "@angular/router";
 import {CricketListComponent} from "./app/cricket-list/cricket-list.component";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 // defining routes of my files here
@@ -24,5 +25,5 @@ const routes: Routes = [
 
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)]
+  providers: [provideRouter(routes), provideAnimationsAsync()]
 }).catch((err) => console.error(err));

@@ -1,51 +1,59 @@
 <!-- To use reactive Forms -->
 <form [formGroup]="cricketForm" (ngSubmit)="onSubmit()">
-
   <!-- Id field -->
   <div class="form-group">
-    <label for="id">ID</label>
-    <input type="number" id="id" formControlName="id" [appHighlightOnFocus]="''">
+    <mat-label>ID</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+    <input matInput type="number" id="id" formControlName="id" [appHighlightOnFocus]="''">
+    </mat-form-field>
   </div>
 
   <!-- Name field -->
   <div class="form-group">
-    <label for="name">Player Name</label>
-    <input type="text" id="name" formControlName="playerName" [appHighlightOnFocus]="''">
+    <mat-label>Player Name</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+    <input matInput type="text" id="name" formControlName="playerName" [appHighlightOnFocus]="''">
+    </mat-form-field>
   </div>
 
   <!-- Age field -->
   <div class="form-group">
-    <label for="age"> Age</label>
-    <input type="number" id="age" formControlName="age" [appHighlightOnFocus]="''">
+    <mat-label> Age</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+    <input matInput type="number" id="age" formControlName="age" [appHighlightOnFocus]="''">
+    </mat-form-field>
   </div>
 
   <!-- Team field -->
   <div class="form-group">
-    <label for="team">Team Name</label>
-    <input type="text" id="team" formControlName="team" [appHighlightOnFocus]="''">
+    <mat-label>Team Name</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+    <input matInput type="text" id="team" formControlName="team" [appHighlightOnFocus]="''">
+    </mat-form-field>
   </div>
 
   <!-- Jersey no. field -->
   <div class="form-group">
-    <label for="jersey">Jersey Number</label>
-    <input type="number" id="jersey" formControlName="jerseyNumber" [appHighlightOnFocus]="''">
+    <mat-label>Jersey Number</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+    <input matInput type="number" id="jersey" formControlName="jerseyNumber" [appHighlightOnFocus]="''">
+    </mat-form-field>
   </div>
 
   <!-- Rating Field -->
   <div class="form-group">
-    <label for="rating">Rating</label>
-    <input type="number" id="rating" formControlName="rating" [appHighlightOnFocus]="''">
-  </div>
+    <mat-label> Rating </mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+    <input matInput type="number" id="rating" formControlName="rating" [appHighlightOnFocus]="''">
+    </mat-form-field>
 
-  <!--Is Retired field -->
+  </div>
   <div class="form-group">
-    <label for="isRetired">Is Retired</label>
-    <input type="checkbox" id="isRetired" formControlName="isRetired" [appHighlightOnFocus]="''">
+  <mat-checkbox formControlName="isRating" class="checkbox" [appHighlightOnFocus]="''">Is Rating</mat-checkbox>
   </div>
-
   <!-- Submit Button -->
-  <button type="submit">Submit</button>
+  <button mat-raised-button type="submit">Submit</button>
 
   <!-- Delete Button -->
-  <button type="button" (click)="onDelete()">Delete</button>
+  <button mat-raised-button type="button" (click)="onDelete()">Delete</button>
 </form>

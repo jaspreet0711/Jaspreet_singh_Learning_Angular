@@ -5,11 +5,13 @@ import {JsonPipe, NgForOf} from "@angular/common";
 import {CricketListComponent} from "./cricket-list/cricket-list.component";
 import {CricketListItemComponent} from "./cricket-list-item/cricket-list-item.component";
 import {CricketPlayerService} from "./services/cricket-player.service";
+import {MatToolbar} from "@angular/material/toolbar";
+import {MatAnchor} from "@angular/material/button";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, JsonPipe, CricketListComponent, CricketListItemComponent, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, NgForOf, JsonPipe, CricketListComponent, CricketListItemComponent, RouterLink, RouterLinkActive, MatToolbar, MatAnchor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

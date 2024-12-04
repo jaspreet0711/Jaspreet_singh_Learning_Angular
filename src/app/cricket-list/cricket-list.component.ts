@@ -7,13 +7,16 @@ import {Router, RouterLink} from "@angular/router";
 import {AgeCategoryPipe} from "../age-category.pipe";
 import {ColorPipe} from "../color.pipe";
 import {BackgroundColorDirective} from "../directives/background-color.directive";
+import {MatTable, MatTableDataSource} from "@angular/material/table";
+import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 
 
 
 @Component({
   selector: 'app-cricket-list',
   standalone: true,
-  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage, RouterLink, PercentPipe, UpperCasePipe, JsonPipe, AgeCategoryPipe, ColorPipe, BackgroundColorDirective],
+  imports: [NgForOf, CricketListItemComponent, NgOptimizedImage, RouterLink, PercentPipe, UpperCasePipe, JsonPipe, AgeCategoryPipe, ColorPipe, BackgroundColorDirective,
+    MatTable, MatCard, MatCardHeader, MatCardTitle, MatCardContent],
   templateUrl: './cricket-list.component.html',
   styleUrl: './cricket-list.component.scss'
 })
@@ -22,6 +25,7 @@ export class CricketListComponent implements OnInit{
   // placeholder values
   columns:string[]= ['id', 'playerName', 'age', 'team', 'jerseyNumber', 'rating', 'isRetired'];
   Players: Cricket[] = [];
+  dataSource: MatTableDataSource<Cricket> = new MatTableDataSource(this.Players);
 
 
   constructor(private playerService: CricketPlayerService,

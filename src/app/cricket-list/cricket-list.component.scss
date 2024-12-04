@@ -1,19 +1,21 @@
-//Styles provided by ChatGpt
+/* Container Styling */
 div {
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
-  background-color: #f9f9f9; /* Light background */
+  background-color: #f9f9f9; /* Light gray background */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 /* Header Styling */
 h2 {
   text-align: center;
-  color: #333;
-  font-size: 1.8em;
+  color: #222; /* Darker gray for better contrast */
+  font-size: 2em;
+  font-weight: 600;
   margin-bottom: 20px;
+  letter-spacing: 1px; /* Adds subtle spacing */
 }
 
 /* Table Styling */
@@ -21,26 +23,82 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
 }
 
+/* Table Header Styling */
 thead {
-  background-color: rgba(243, 11, 11, 0.79); /* Dark blue background for header */
-  color: #fff; /* White text for header */
+  background-color: #c8102e; /* Red header for vibrant look */
+  color: #fff; /* White text for better contrast */
+  text-transform: uppercase; /* Make header text uppercase */
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 th, td {
   text-align: left;
   padding: 12px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eaeaea; /* Subtle border for clean separation */
 }
 
-th {
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
+/* Table Row Hover Effects */
 tr:hover {
-  background-color: #f1f1f1;}
+  background-color: #f5f5f5; /* Light gray hover effect */
+}
 
 thead tr:hover {
-  background-color: rgba(0, 123, 255, 0.87);}
+  background-color: #a00c1d; /* Slightly darker red on hover for header */
+}
+
+/* Buttons Styling */
+button {
+  padding: 8px 16px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  color: #007bff;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.edit {
+  background-color: #007bff; /* Blue for Edit */
+}
+
+button.edit:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+button.delete {
+  background-color: #dc3545; /* Red for Delete */
+}
+
+button.delete:hover {
+  background-color: #b02a37; /* Darker red on hover */
+}
+
+/* Pagination Buttons */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background-color: #007bff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #0056b3;
+}

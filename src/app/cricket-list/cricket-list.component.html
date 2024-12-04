@@ -1,5 +1,9 @@
-<div>
-  <h2>Best Cricket Players</h2>
+<div class="container">
+  <mat-card class="player-card">
+    <mat-card-header>
+      <mat-card-title>Best Cricket Players</mat-card-title>
+      </mat-card-header>
+    <mat-card-content>
   <table>
     <thead>
     <tr>
@@ -26,11 +30,12 @@
       <td>{{ player.isRetired ? 'True' : 'False' }}</td>
      <!-- <td><img [ngSrc]="player.image" alt="Image" width="100" height="100" priority></td>-->
 
-      <td><button (click)="editPlayer()" [appBackgroundColor]="'lightgreen'">Edit</button>
-      <button (click)="onDelete(player.id)" [appBackgroundColor]="'red'">Delete</button></td>
+      <td><button  mat-raised-button color="accent" type="button" (click)="editPlayer()" [appBackgroundColor]="'lightgreen'">Edit</button>
+      <button type="button" (click)="onDelete(player.id)" [appBackgroundColor]="'red'">Delete</button></td>
     </tr>
     </tbody>
   </table>
-
+    </mat-card-content>
+  </mat-card>
 </div>
 

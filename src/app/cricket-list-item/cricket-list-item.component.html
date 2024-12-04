@@ -1,6 +1,9 @@
 <div *ngIf="Players" class="cricket-items">
-
-  <h1>Player Info</h1>
+  <mat-card class="cricket-card">
+    <mat-card-header>
+      <mat-card-title>Player Info</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
   <h3><strong>ID:</strong>{{Players.id}}</h3>
   <h3><strong>Name:</strong>{{Players.playerName}}</h3>
   <p>Age: {{Players.age}}</p>
@@ -8,4 +11,6 @@
   <p>Jersey Number: {{Players.jerseyNumber}}</p>
   <p>Rating: {{Players.rating}}</p>
   <p>Retired: {{Players.isRetired}}</p>
+    </mat-card-content>
+  </mat-card>
 </div>

@@ -4,6 +4,9 @@ import {CricketPlayerService} from "../services/cricket-player.service";
 import {Router} from "@angular/router";
 import {Cricket} from "../Shared/Models/Cricket";
 import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
+import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {MatButton} from "@angular/material/button";
+import {MatCheckbox} from "@angular/material/checkbox";
 
 @Component({
   selector: 'app-modify-list-item',
@@ -12,7 +15,11 @@ import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.direct
     FormsModule,
     ReactiveFormsModule,
     HighlightOnFocusDirective,
-    HighlightOnFocusDirective
+    HighlightOnFocusDirective,
+    MatFormField,
+    MatLabel,
+    MatButton,
+    MatCheckbox
   ],
   templateUrl: './modify-list-item.component.html',
   styleUrl: './modify-list-item.component.scss'
